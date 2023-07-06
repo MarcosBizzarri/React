@@ -10,8 +10,9 @@ import CarDetails from './componentes/CarDetails';
 import Fragment from './componentes/Fragment';
 import Container from './componentes/Container';
 import ExecuteFunction from './componentes/ExecuteFunction';
+import UserDetails from './componentes/UserDetails';
 
-import ChangeMessageState from './componentes/ChangeMessageState';
+
 
 
 function App() {
@@ -24,15 +25,19 @@ function App() {
     {id: 3, brand: "GM", color: "Branco", newCar: false, km: 30201},
   ]
 
-  function showMessage() {
-    console.log("Evento do componente pai!");
-  }  
 
-  const [message, setMessage] = useState("");
+   function showMensagem() {
+    AbortController.log("Evento do componente pai!")
+   }
 
-  const handleMessage = (msg) => {
-    setMessage(msg);
-  };
+   const users = [
+    { id: 1, name: "Marcos" , job: "Programador", age: 31},
+    { id: 2, name: "Maria", job: "Advogada", age: 40},
+    { id: 3, name: "Ronaldo", job: "Reporter", age: 36},
+    { id: 4, name: "Jéssica", job: "Aluna", age: 14},
+   ]
+
+  
 
   return (
     <div className="App">
@@ -75,10 +80,18 @@ function App() {
       <Container myValue="testing 3">
          <h3>Conteainer ok</h3>
       </Container>
-      {/* executar funçã0 */}
-      <ExecuteFunction myFunction={showMessage}/>
-      <Message msg={message} />
-      <ChangeMessageState />
+      <ExecuteFunction myFunction={showMensagem} />
+      {users.map((user) => (
+      <UserDetails 
+      key={user.id} 
+      name={user.name} 
+      job={user.job} 
+      age={user.age} />
+      ))}
+    
+      
+     
+      
     </div>
   );
 }

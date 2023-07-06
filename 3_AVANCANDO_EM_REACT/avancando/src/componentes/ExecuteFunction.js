@@ -1,7 +1,7 @@
 const ExecuteFunction = (myFunction) => {
   return (
     <div>
-        <button onclick={myFunction}>Clique aqui para executar a função!</button>
+        <button onclick={myFunction}>Clique aqui para executar a função</button>
     </div>
   )
 }
