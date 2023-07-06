@@ -1,0 +1,11 @@
+p {
+    color: gold;
+    background-color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.my-comp-paragraph {
+       color: black;
+       background-color: red;
+}
