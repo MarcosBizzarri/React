@@ -1,8 +1,9 @@
 import './App.css';
 import MyComponent from './Componentes/MyComponent';
 
-import { useState } from "react";
-import Title from "./componentes/Title";
+
+import Title from "./Componentes/Title";
+
 
 
 function App() {
@@ -41,7 +42,9 @@ function App() {
       Teste nome</h2>
 
       <h2 className={redTitle ? "red-title" : "title"}>Este título vai ter classe dinâmica</h2>
+
       <Title />
+      
 
       
       

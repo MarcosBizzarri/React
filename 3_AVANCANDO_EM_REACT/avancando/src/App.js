@@ -10,7 +10,10 @@ import CarDetails from './componentes/CarDetails';
 import Fragment from './componentes/Fragment';
 import Container from './componentes/Container';
 import ExecuteFunction from './componentes/ExecuteFunction';
-import UserDetails from './componentes/UserDetails';
+
+import Message from "./componentes/Message";
+import ChangeMessageState from './componentes/ChangeMessageState';
+
 
 
 
@@ -26,9 +29,15 @@ function App() {
   ]
 
 
-   function showMensagem() {
+   function showMensage() {
     AbortController.log("Evento do componente pai!")
    }
+
+   const [message, setMessage] = useState("");
+   
+   const handleMessage = (msg) => {
+    setMessage(msg);
+   };
 
    const users = [
     { id: 1, name: "Marcos" , job: "Programador", age: 31},
@@ -80,14 +89,9 @@ function App() {
       <Container myValue="testing 3">
          <h3>Conteainer ok</h3>
       </Container>
-      <ExecuteFunction myFunction={showMensagem} />
-      {users.map((user) => (
-      <UserDetails 
-      key={user.id} 
-      name={user.name} 
-      job={user.job} 
-      age={user.age} />
-      ))}
+      <ExecuteFunction myFunction={showMensage} />
+      <Message msg={message} />
+      <ChangeMessageState handleMessage={handleMessage}/>
     
       
      
